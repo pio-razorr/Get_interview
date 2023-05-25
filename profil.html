@@ -10,6 +10,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -24,7 +28,45 @@
 
 <body class="d-flex flex-column h-100" style="background: #FEF7EF;">
 
-    <div class="container-fluid flex-shrink-0 py-5">
+    <nav id="navbar" class="container-fluid navbar navbar-expand-lg position-fixed" style="z-index: 10;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="wrapper-logo">
+                    <img src="assets/Group 51.png" width="150" alt="Logo">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="nav-kanan">
+                            <a href="#" class="nav-teks">Home</a>
+                            <a href="#" class="nav-teks">Lowongan</a>
+                            <a href="#" class="nav-teks">Interview anda</a>
+                            <div class="dropdown-profil">
+                                <button id="dropdown-profil-btn" class="dropdown-profil-btn nav-teks">
+                                    <div class="nama-container">
+                                        Namahgvjvjjhjyv
+                                    </div>
+                                    <i id="dropdown-profil-icon" class="fa-solid fa-chevron-down"
+                                        style="margin-left: 10px;"></i>
+                                </button>
+                                <div id="dropdown-profil-isi" class="dropdown-profil-isi">
+                                    <a href="#" class="dropdown-teks-isi-top">Status interview</a>
+                                    <a href="#" class="dropdown-teks-isi-bottom">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid flex-shrink-0 py-5 mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -36,7 +78,8 @@
                     <div class="row">
                         <div class="col">
                             <h6>Nama</h6>
-                            <h6 class="rounded-4 px-3 py-3 w-100 text-muted" style="border: 1px solid #1468C2;">Nama</h6>
+                            <h6 class="rounded-4 px-3 py-3 w-100 text-muted" style="border: 1px solid #1468C2;">Nama
+                            </h6>
                         </div>
                     </div>
                     <div class="row">
@@ -56,7 +99,8 @@
                     <div class="row">
                         <div class="col">
                             <h6>Link Meet</h6>
-                            <h6 class="rounded-4 px-3 py-3 w-100 text-muted" style="border: 1px solid #1468C2;">Link</h6>
+                            <h6 class="rounded-4 px-3 py-3 w-100 text-muted" style="border: 1px solid #1468C2;">Link
+                            </h6>
                         </div>
                     </div>
                     <div class="row">
@@ -79,6 +123,29 @@
 
 
     <script src="js/bootstrap.js"></script>
+
+    <script>
+
+        const btn_dropdown = document.getElementById('dropdown-profil-btn');
+        const isi_dropdown = document.getElementById('dropdown-profil-isi');
+        const icon_dropdown = document.getElementById('dropdown-profil-icon');
+
+        btn_dropdown.addEventListener('click', function () {
+            isi_dropdown.classList.toggle('tampil');
+            if (icon_dropdown.classList.contains('fa-chevron-down')) {
+                icon_dropdown.classList.remove('fa-chevron-down');
+                icon_dropdown.classList.add('fa-chevron-up');
+                btn_dropdown.style.textDecoration = "underline";
+                btn_dropdown.style.color = "#1468C2";
+            } else {
+                icon_dropdown.classList.remove('fa-chevron-up');
+                icon_dropdown.classList.add('fa-chevron-down');
+                btn_dropdown.style.textDecoration = "none";
+                btn_dropdown.style.color = "#A5A5A5";
+            }
+        });
+
+    </script>
 </body>
 
 </html>
